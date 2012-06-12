@@ -12,6 +12,7 @@ usage
 $ ./octo-twitter-track sstic alcohol
 2012-06-12 18:49:28 @xxx: Nearly missed our stop on the bus for the second time today which can only associated with our lack of sleep/ alcohol intake last night.
 ^C
+$ ./octo-track-twitter alcohol -o /dev/stdout | tee -a alcohol.log
 $ ./octo-track-twitter -h
 Usage: octo-track-twitter.py [options]
  
