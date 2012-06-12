@@ -41,6 +41,8 @@ installation
 $ sudo pip install tweepy
 ```
 
+Debian package is too old. You have to use latest version (1.9) available on pypi.
+
 Twitter OAuth credentials
 =========================
 
