@@ -1,0 +1,30 @@
+#! /bin/sh
+
+SRCFILE="${HOME}/.config/octo-track-twitter/conf.sh"
+DIRCONF=$(dirname "$SRCFILE")
+
+if [ -e "$SRCFILE" ]; then
+    . "$SRCFILE"
+else
+    echo "Please fill your twitter credentials in $SRCFILE like :"
+    cat <<EOF
+
+$ mkdir -p "$DIRCONF"
+$ cat > "$SRCFILE"
+
+CONSUMER_KEY="XXX" # obtained from https://dev.twitter.com/apps/new
+CONSUMER_SECRET="XXX"
+
+# access token
+ACCESS_TOKEN="XXX"
+ACCESS_KEY="XXX"
+
+EOF
+    exit 1
+fi
+
+exec ./octo-track-twitter.py --consumer-key "$CONSUMER_KEY"       \
+                             --consumer-secret "$CONSUMER_SECRET" \
+                             --access-token "$ACCESS_TOKEN"       \
+                             --access-key "$ACCESS_KEY" $*
+
